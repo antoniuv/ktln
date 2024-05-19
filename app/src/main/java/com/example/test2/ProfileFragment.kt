@@ -1,15 +1,15 @@
-package com.example.test2
+package com.example.tinderlikeapp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import com.example.test2.R
 
 class ProfileFragment : Fragment() {
 
@@ -29,13 +29,20 @@ class ProfileFragment : Fragment() {
         val profileBio: TextView = view.findViewById(R.id.profile_bio)
         val configureProfileButton: Button = view.findViewById(R.id.configure_profile_button)
 
-        // setam datele pentru profil (imagine, varsa, descriere)
-        profileImage.setImageResource(R.drawable.profile_picture)
+        // Set profile image, name and age, bio
+        profileImage.setImageResource(R.drawable.profile_picture) // Replace with your image resource
         profileNameAge.text = getString(R.string.user_age)
         profileBio.text = getString(R.string.user_text_description)
 
+        // Set up button click listener
         configureProfileButton.setOnClickListener {
-            Toast.makeText(activity, "Am apasat pe configureaza profil", Toast.LENGTH_SHORT).show()
+            // Navigate to the profile configuration fragment
+            val configureProfileFragment = ConfigureProfileFragment()
+
+            val transaction: FragmentTransaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, configureProfileFragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
         }
     }
 }

@@ -77,6 +77,7 @@ import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import com.example.test2.ui.theme.TestTheme
+import com.example.tinderlikeapp.ProfileFragment
 import java.util.Arrays
 import kotlin.math.roundToInt
 
