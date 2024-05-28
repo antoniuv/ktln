@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
+        android:id="@+id/profiletext"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile Fragment"
-        android:textSize="36sp"
+        android:layout_height="136dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="Your Profile"
         android:textColor="@color/brown"
-        android:gravity="center"/>
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="80dp"
+        android:text="Profile Details"
+        app:layout_constraintBottom_toTopOf="@id/profiletext"
+        app:layout_constraintEnd_toEndOf="@id/profiletext"
+        app:layout_constraintStart_toStartOf="@id/profiletext"
+        app:layout_constraintTop_toTopOf="@id/profiletext" />
 
 </FrameLayout>
