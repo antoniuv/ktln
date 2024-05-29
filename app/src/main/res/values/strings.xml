@@ -2,4 +2,8 @@
     <string name="app_name">test2</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile_image_desc">Cautator de chirie</string>
+    <string name="user_text_description">Salut, eu sunt alex si-mi caut o chirie</string>
+    <string name="user_age">28</string>
+    <string name="configure_profile">Configureaza profil</string>
 </resources>

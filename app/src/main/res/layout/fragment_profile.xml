@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+=======
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> bacd6e88738c8ec536044f1a40009760f4222d08
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
+    android:padding="16dp">
 
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/profile_picture"
+        android:contentDescription="@string/profile_image_desc"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"/>
+
+<<<<<<< HEAD
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
@@ -31,5 +47,36 @@
         app:layout_constraintEnd_toEndOf="@id/profiletext"
         app:layout_constraintStart_toStartOf="@id/profiletext"
         app:layout_constraintTop_toTopOf="@id/profiletext" />
+=======
+    <TextView
+        android:id="@+id/profile_name_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_image"
+        android:layout_centerHorizontal="true"
+        android:text="@string/user_age"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+>>>>>>> bacd6e88738c8ec536044f1a40009760f4222d08
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/profile_bio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_name_age"
+        android:layout_centerHorizontal="true"
+        android:text="@string/user_text_description"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:padding="8dp"/>
+
+    <Button
+        android:id="@+id/configure_profile_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_bio"
+        android:layout_centerHorizontal="true"
+        android:text="@string/configure_profile"
+        android:layout_marginTop="16dp"/>
+</RelativeLayout>
