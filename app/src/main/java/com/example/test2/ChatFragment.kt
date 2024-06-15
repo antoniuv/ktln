@@ -23,7 +23,7 @@ class ChatFragment : Fragment(), ChatAdapter.OnItemClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_chat, container, false)
 
-        //initializeaza baza de daet
+        //initializeaza baza de date
         dbHelper = DatabaseHelper(requireContext())
 
         chatRecyclerView = view.findViewById(R.id.chatRecyclerView)

@@ -46,7 +46,8 @@ class HomeFragment : Fragment() {
             }
 
             override fun onAdapterAboutToEmpty(itemsInAdapter: Int) {
-                // You can load more data here
+                // De scris
+                // In momentul in care nu mai sunt uilizatori
             }
 
             override fun onScroll(scrollProgressPercent: Float) {}
@@ -57,7 +58,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun loadUsers(): MutableList<SwipeUser> {
-        // Mock data for users, replace with your actual data retrieval logic
+        //Date de test, de schimbat
         return mutableListOf(
             SwipeUser("user1", "John Doe", "john@example.com"),
             SwipeUser("zbording", "Indiana Jones", "nam"),

@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import kotlin.math.max
 
+//clase ajutatoare
 data class UserDetails(
     var name: String?,
     var email: String?,
@@ -59,6 +60,7 @@ class DatabaseHelper(private val context: Context)
         private const val COLUMN_TIMESTAMP = "timestamp"
     }
 
+    //creare tabele
     override fun onCreate(db: SQLiteDatabase?) {
         val createTableQuery = ("CREATE TABLE $TABLE_NAME (" +
                 "$COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -121,7 +123,7 @@ class DatabaseHelper(private val context: Context)
         cursor.close();
         return userExists
     }
-
+    //FUNCTIE IMPORTANTA
     fun getLoggedInUsername(): String? {
         val sharedPref = context.getSharedPreferences("UserSession", Context.MODE_PRIVATE)
         return sharedPref.getString("loggedInUsername", null)
@@ -181,7 +183,7 @@ class DatabaseHelper(private val context: Context)
         }
     }
 
-    // Insert match
+    //insereaza match
     fun insertMatch(user1: String, user2: String): Long {
         val values = ContentValues().apply {
             put(COLUMN_USER1, user1)
@@ -191,7 +193,7 @@ class DatabaseHelper(private val context: Context)
         return db.insert(TABLE_MATCHES, null, values)
     }
 
-    // Check if match exists
+    //verificare match
     fun isMatch(user1: String, user2: String): Boolean {
         val db = readableDatabase
         val selection = "(($COLUMN_USER1 = ? AND $COLUMN_USER2 = ?) OR ($COLUMN_USER1 = ? AND $COLUMN_USER2 = ?))"
@@ -203,7 +205,7 @@ class DatabaseHelper(private val context: Context)
         return matchExists
     }
 
-    // Insert message
+    //insereaza mesaj
     fun insertMessage(sender: String, receiver: String, content: String): Long {
         val values = ContentValues().apply {
             put(COLUMN_SENDER, sender)
@@ -215,7 +217,7 @@ class DatabaseHelper(private val context: Context)
         return db.insert(TABLE_MESSAGES, null, values)
     }
 
-    // Get chat messages
+    //preia mesaje
     fun getMessages(user1: String?, user2: String): List<Message> {
         val db = readableDatabase
         val selection = "(($COLUMN_SENDER = ? AND $COLUMN_RECEIVER = ?) OR ($COLUMN_SENDER = ? AND $COLUMN_RECEIVER = ?))"
@@ -236,7 +238,7 @@ class DatabaseHelper(private val context: Context)
         return messages
     }
 
-    // Get matches for logged-in user
+    //ia conversatiile utilizatorului
     fun getMatches(username: String): List<String> {
         val db = readableDatabase
         val selection = "$COLUMN_USER1 = ? OR $COLUMN_USER2 = ?"
@@ -257,7 +259,7 @@ class DatabaseHelper(private val context: Context)
         return matches
     }
 
-    // Get latest message between two users
+    //ultimul mesaj intre useri, pentru infrumusetare :)
     fun getLatestMessage(user1: String, user2: String): Message? {
         val db = readableDatabase
         val selection = "(($COLUMN_SENDER = ? AND $COLUMN_RECEIVER = ?) OR ($COLUMN_SENDER = ? AND $COLUMN_RECEIVER = ?))"
