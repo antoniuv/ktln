@@ -216,7 +216,7 @@ class DatabaseHelper(private val context: Context)
     }
 
     // Get chat messages
-    fun getMessages(user1: String, user2: String): List<Message> {
+    fun getMessages(user1: String?, user2: String): List<Message> {
         val db = readableDatabase
         val selection = "(($COLUMN_SENDER = ? AND $COLUMN_RECEIVER = ?) OR ($COLUMN_SENDER = ? AND $COLUMN_RECEIVER = ?))"
         val selectionArgs = arrayOf(user1, user2, user2, user1)

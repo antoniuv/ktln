@@ -23,13 +23,13 @@ class ChatFragment : Fragment(), ChatAdapter.OnItemClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_chat, container, false)
 
-        // Initialize the DatabaseHelper
+        //initializeaza baza de daet
         dbHelper = DatabaseHelper(requireContext())
 
         chatRecyclerView = view.findViewById(R.id.chatRecyclerView)
         chatRecyclerView.layoutManager = LinearLayoutManager(context)
 
-        // Load chats from the database
+        //de aici adauga conversatiile
         chats = loadChats()
         Log.d("ChatFragment", "Chats loaded: $chats")
         chatAdapter = ChatAdapter(requireContext(), chats, this)
@@ -39,7 +39,6 @@ class ChatFragment : Fragment(), ChatAdapter.OnItemClickListener {
     }
 
     private fun loadChats(): MutableList<Chat> {
-        // Load chats from the database
         return dbHelper.loadChats().toMutableList()
     }
 
