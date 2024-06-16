@@ -10,10 +10,10 @@ import com.lorentzos.flingswipe.SwipeFlingAdapterView
 
 class HomeFragment : Fragment() {
 
-    private lateinit var swipeView: SwipeFlingAdapterView
-    private lateinit var adapter: SwipeAdapter
-    private lateinit var dbHelper: DatabaseHelper
-    private lateinit var users: MutableList<SwipeUser>
+    public lateinit var swipeView: SwipeFlingAdapterView
+    public lateinit var adapter: SwipeAdapter
+    public lateinit var dbHelper: DatabaseHelper
+    public lateinit var users: MutableList<SwipeUser>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,7 +57,7 @@ class HomeFragment : Fragment() {
         return view
     }
 
-    private fun loadUsers(): MutableList<SwipeUser> {
+    public fun loadUsers(): MutableList<SwipeUser> {
         //Date de test, de schimbat
         return mutableListOf(
             SwipeUser("user1", "John Doe", "john@example.com"),
@@ -67,7 +67,7 @@ class HomeFragment : Fragment() {
         )
     }
 
-    private fun handleMatch(username: String) {
+    public fun handleMatch(username: String) {
         val loggedInUsername = dbHelper.getLoggedInUsername()
         if (loggedInUsername != null && !dbHelper.isMatch(loggedInUsername, username)) {
             dbHelper.insertMatch(loggedInUsername, username)

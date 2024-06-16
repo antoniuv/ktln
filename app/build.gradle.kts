@@ -4,6 +4,18 @@ plugins {
 }
 
 android {
+//    tasks.whenTaskAdded {
+//        if (name == "assemble") {
+//            dependsOn("test")
+//            dependsOn("connectedAndroidTest")
+//        }
+//    }
+//    tasks {
+//        withType<Test> {
+//            useJUnitPlatform()
+//        }
+//    }
+
     namespace = "com.example.test2"
     compileSdk = 34
 
@@ -47,6 +59,7 @@ android {
 
 
 dependencies {
+    implementation(libs.core.ktx)
     val composeBom = platform("androidx.compose:compose-bom:2024.04.01")
     implementation(composeBom)
     androidTestImplementation(composeBom)
@@ -69,6 +82,12 @@ dependencies {
     // UI Tests
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+
+    androidTestImplementation("androidx.test.ext:junit-ktx:1.1.3")
+    testImplementation("org.mockito:mockito-core:3.12.4")
+    testImplementation("androidx.arch.core:core-testing:2.1.0")
+
 
     // Optional - Included automatically by material, only add when you need
     // the icons but not the material library (e.g. when using Material3 or a
@@ -94,7 +113,8 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
+    testImplementation("io.mockk:mockk:1.10.6")
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    //androidTestImplementation(libs.androidx.espresso.core)
     implementation ("com.lorentzos.swipecards:library:1.0.9")
 }
