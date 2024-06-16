@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-=======
+<!--<<<<<<< HEAD-->
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--=======-->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
->>>>>>> bacd6e88738c8ec536044f1a40009760f4222d08
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -19,15 +19,16 @@
         android:src="@drawable/profile_picture"
         android:contentDescription="@string/profile_image_desc"
         android:layout_marginBottom="16dp"
+        android:layout_below="@id/profiletext"
         android:scaleType="centerCrop"/>
 
-<<<<<<< HEAD
+<!--<<<<<<< HEAD-->
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
         android:id="@+id/profiletext"
         android:layout_width="match_parent"
-        android:layout_height="136dp"
+        android:layout_height="50dp"
         android:clickable="true"
         android:gravity="center"
         android:text="Your Profile"
@@ -38,16 +39,13 @@
         android:id="@+id/button4"
         android:layout_width="96dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="110dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginBottom="80dp"
-        android:text="Profile Details"
-        app:layout_constraintBottom_toTopOf="@id/profiletext"
-        app:layout_constraintEnd_toEndOf="@id/profiletext"
-        app:layout_constraintStart_toStartOf="@id/profiletext"
-        app:layout_constraintTop_toTopOf="@id/profiletext" />
-=======
+        android:layout_below="@id/profile_bio"
+        android:layout_centerHorizontal="true"
+        android:text="Profile Details"/>
+
+<!--    android:layout_marginStart="150dp"-->
+<!--    android:layout_marginTop="110dp"-->
+<!--=======-->
     <TextView
         android:id="@+id/profile_name_age"
         android:layout_width="wrap_content"
@@ -58,7 +56,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginBottom="8dp"/>
->>>>>>> bacd6e88738c8ec536044f1a40009760f4222d08
+<!--&gt;>>>>>> bacd6e88738c8ec536044f1a40009760f4222d08-->
 
     <TextView
         android:id="@+id/profile_bio"
@@ -71,12 +69,4 @@
         android:gravity="center"
         android:padding="8dp"/>
 
-    <Button
-        android:id="@+id/configure_profile_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/profile_bio"
-        android:layout_centerHorizontal="true"
-        android:text="@string/configure_profile"
-        android:layout_marginTop="16dp"/>
 </RelativeLayout>

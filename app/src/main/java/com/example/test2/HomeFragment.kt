@@ -4,20 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-<<<<<<< HEAD
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.ComposeView
-import androidx.fragment.app.Fragment
-import com.example.test2.ui.theme.TestTheme
-import androidx.compose.material3.MaterialTheme
-import com.example.test2.components.AruncatorAlerte
-import com.example.test2.components.RectangleDrawer
-
-class HomeFragment : Fragment() {
-=======
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.lorentzos.flingswipe.SwipeFlingAdapterView
@@ -29,24 +15,9 @@ class HomeFragment : Fragment() {
     private lateinit var dbHelper: DatabaseHelper
     private lateinit var users: MutableList<SwipeUser>
 
->>>>>>> origin/FunctionalitateChat
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-<<<<<<< HEAD
-    ): View {
-        return ComposeView(requireContext()).apply {
-            setContent {
-                TestTheme {
-                    // A surface container using the 'background' color from the theme
-                    Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                        ShowMeniu(this);
-                    }
-                }
-            }
-        }
-=======
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
@@ -84,20 +55,8 @@ class HomeFragment : Fragment() {
         })
 
         return view
->>>>>>> origin/FunctionalitateChat
     }
-}
 
-<<<<<<< HEAD
-@Composable
-fun ShowMeniu(instanceOfMain: ComposeView)
-{
-    for(i in 1..5)
-    {
-        RectangleDrawer.DrawOneDraggableRectangle(xFloatPos = MainActivity.getScreenWidthAsFloat()/2+50f, yFloatPos = MainActivity.getScreenHeightAsFloat()/2+100f,
-            swipeDistance = 300f, onRectangleSwiped = {})
-
-=======
     private fun loadUsers(): MutableList<SwipeUser> {
         //Date de test, de schimbat
         return mutableListOf(
@@ -113,6 +72,5 @@ fun ShowMeniu(instanceOfMain: ComposeView)
         if (loggedInUsername != null && !dbHelper.isMatch(loggedInUsername, username)) {
             dbHelper.insertMatch(loggedInUsername, username)
         }
->>>>>>> origin/FunctionalitateChat
     }
 }
