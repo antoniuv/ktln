@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
-
+    //acces la aplicatie prin functia asta
     private fun loginDatabase(username: String, password: String){
         val userExists = databaseHelper.readUser(username, password)
 

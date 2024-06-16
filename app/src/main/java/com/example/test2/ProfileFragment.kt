@@ -22,7 +22,7 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // layout-ul
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
@@ -30,7 +30,11 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         // Find views and set up any listeners or initializations
+=======
+        //iau butonul
+>>>>>>> origin/FunctionalitateChat
         val button: Button = view.findViewById(R.id.button4)
 
         button.setOnClickListener {

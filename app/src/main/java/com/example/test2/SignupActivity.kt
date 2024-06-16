@@ -35,7 +35,7 @@ class SignupActivity : AppCompatActivity() {
 
 
     }
-
+    //adaug utilizator
     private fun signupDatabase(username: String, password: String){
         val insertedRowId = databaseHelper.insertUser(username, password)
         if(insertedRowId != -1L){

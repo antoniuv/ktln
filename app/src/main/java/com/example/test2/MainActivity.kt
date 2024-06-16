@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation)
-
+        //navigatie intre feature-uri
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when(menuItem.itemId){
                 R.id.bottom_home -> {

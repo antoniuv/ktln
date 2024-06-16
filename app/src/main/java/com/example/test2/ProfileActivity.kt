@@ -2,6 +2,7 @@ package com.example.test2
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.test2.databinding.ActivityProfileBinding
 
+//foarte important altfel nu se potriveste nimic
+fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
 class ProfileActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProfileBinding
@@ -21,6 +24,19 @@ class ProfileActivity : AppCompatActivity() {
 
         databaseHelper = DatabaseHelper(this)
 
+        //iau ce am nevoie
+        val loggedInUsername = databaseHelper.getLoggedInUsername()
+        if (loggedInUsername != null) {
+            val userDetails = databaseHelper.getUserDetails(loggedInUsername)
+            userDetails?.let {
+                binding.editTextText.text = it.name?.toEditable()//noroc cu functia asta ca alfel muream
+                binding.editTextTextEmailAddress.text = it.email?.toEditable()
+                binding.editTextTextPostalAddress.text = it.address?.toEditable()
+                binding.editTextPhone2.text = it.phoneNumber?.toEditable()
+                binding.editTextDate.text = it.birthday?.toEditable()
+            }
+        }
+        //adaug schimbarile
         binding.buttonprofilesubmit.setOnClickListener {
 
             val birthday = binding.editTextDate.text.toString()
